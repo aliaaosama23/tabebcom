@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 Future<List<Vaccine>> getPatientVaccination(
     http.Client client, int patientCode) async {
   final response = await client.get(Uri.parse(
-      'https://mcare.careofme.net/api/Patient/GetPatientVaccination/$patientCode'));
+      '/api/Patient/GetPatientVaccination/$patientCode'));
   return compute(parsPatientVaccination, response.body);
 }
 
