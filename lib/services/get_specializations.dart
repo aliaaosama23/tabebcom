@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 Future<List<Clinc>> getClincs(http.Client client) async {
   final response = await client.get(
-      Uri.parse('https://mcare.careofme.net/api/Clinic/GetClinicsByBranch/0'));
+      Uri.parse('/api/Clinic/GetClinicsByBranch/0'));
 
       if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
