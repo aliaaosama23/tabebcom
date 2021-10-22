@@ -10,7 +10,7 @@ Future<List<DoctorAppointment>> getDoctorAppointments(
   var formatter = new DateFormat('yyyy-MM-dd hh:mm a');
   String formattedDate = formatter.format(now);
   print('current date is $formattedDate');
-  var url='https://mcare.careofme.net/api/Doctor/GetDoctorAppointments?DoctorCode=$doctorCode&Fk_Branch_ID=$fkBranchID&StartDate=$formattedDate&IS_TeleMed=$iSTeleMed';
+  var url='api/Doctor/GetDoctorAppointments?DoctorCode=$doctorCode&Fk_Branch_ID=$fkBranchID&StartDate=$formattedDate&IS_TeleMed=$iSTeleMed';
   final response = await client.get(Uri.parse(url));
  print('available appointments $url');
   return compute(parseDoctors, response.body);
